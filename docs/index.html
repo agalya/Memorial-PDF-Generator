@@ -26,7 +26,7 @@
             background: white;
             border-radius: 12px;
             box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
-            max-width: 600px;
+            max-width: 700px;
             width: 100%;
             padding: 40px;
             animation: slideIn 0.3s ease-out;
@@ -54,210 +54,114 @@
             text-align: center;
             color: #666;
             margin-bottom: 30px;
-            font-size: 14px;
+            font-size: 16px;
         }
 
-        .form-group {
-            margin-bottom: 24px;
+        .content {
+            margin-bottom: 30px;
+            line-height: 1.6;
         }
 
-        label {
-            display: block;
-            margin-bottom: 8px;
-            font-weight: 600;
+        .content p {
+            margin-bottom: 15px;
+            color: #555;
+        }
+
+        .features {
+            background: #f5f5f5;
+            padding: 20px;
+            border-radius: 8px;
+            margin-bottom: 25px;
+        }
+
+        .features h3 {
             color: #1a1a2e;
-            font-size: 14px;
+            margin-bottom: 15px;
+            font-size: 16px;
         }
 
-        input[type="text"],
-        textarea,
-        select {
-            width: 100%;
-            padding: 12px;
-            border: 2px solid #e0e0e0;
-            border-radius: 8px;
-            font-size: 14px;
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            transition: border-color 0.3s;
+        .features ul {
+            list-style: none;
+            padding-left: 0;
         }
 
-        input[type="text"]:focus,
-        textarea:focus,
-        select:focus {
-            outline: none;
-            border-color: #b9956a;
-            box-shadow: 0 0 0 3px rgba(185, 149, 106, 0.1);
-        }
-
-        textarea {
-            resize: vertical;
-            min-height: 120px;
-            font-family: 'Courier New', monospace;
-            line-height: 1.5;
-        }
-
-        .file-input-wrapper {
+        .features li {
+            padding: 8px 0;
+            padding-left: 25px;
             position: relative;
-            overflow: hidden;
-            display: inline-block;
-            width: 100%;
+            color: #555;
         }
 
-        input[type="file"] {
+        .features li:before {
+            content: "✓";
             position: absolute;
-            left: -9999px;
-        }
-
-        .file-label {
-            display: block;
-            padding: 12px;
-            background-color: #f5f5f5;
-            border: 2px dashed #b9956a;
-            border-radius: 8px;
-            text-align: center;
-            cursor: pointer;
-            transition: all 0.3s;
-            font-size: 14px;
-            font-weight: 500;
-            color: #666;
-        }
-
-        .file-label:hover {
-            background-color: #f9f6f3;
-            border-color: #8b7355;
-        }
-
-        .file-name {
-            display: block;
-            margin-top: 8px;
-            font-size: 12px;
-            color: #999;
-        }
-
-        .form-row {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 20px;
-        }
-
-        .radio-group {
-            display: flex;
-            gap: 20px;
-            margin-top: 8px;
-        }
-
-        .radio-option {
-            display: flex;
-            align-items: center;
-            gap: 8px;
-        }
-
-        input[type="radio"] {
-            cursor: pointer;
-        }
-
-        .radio-option label {
-            margin: 0;
-            font-weight: normal;
-            cursor: pointer;
+            left: 0;
+            color: #b9956a;
+            font-weight: bold;
         }
 
         .btn-group {
             display: flex;
             gap: 12px;
             margin-top: 30px;
+            flex-wrap: wrap;
         }
 
-        button {
+        a.btn {
             flex: 1;
+            min-width: 200px;
             padding: 14px;
             border: none;
             border-radius: 8px;
             font-size: 15px;
             font-weight: 600;
             cursor: pointer;
+            text-decoration: none;
+            text-align: center;
             transition: all 0.3s;
+            display: inline-block;
         }
 
-        .btn-generate {
+        .btn-launch {
             background: linear-gradient(135deg, #b9956a 0%, #8b7355 100%);
             color: white;
         }
 
-        .btn-generate:hover {
+        .btn-launch:hover {
             transform: translateY(-2px);
             box-shadow: 0 10px 20px rgba(185, 149, 106, 0.3);
         }
 
-        .btn-generate:active {
-            transform: translateY(0);
+        .btn-github {
+            background: #333;
+            color: white;
         }
 
-        .btn-reset {
-            background: #e0e0e0;
-            color: #333;
+        .btn-github:hover {
+            background: #555;
+            transform: translateY(-2px);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
         }
 
-        .btn-reset:hover {
-            background: #d0d0d0;
-        }
-
-        .btn-generate:disabled {
-            opacity: 0.6;
-            cursor: not-allowed;
-            transform: none;
-        }
-
-        .loading {
-            display: none;
-            text-align: center;
-            color: #666;
-            font-size: 14px;
-            margin-top: 10px;
-        }
-
-        .spinner {
-            display: inline-block;
-            width: 16px;
-            height: 16px;
-            border: 2px solid #e0e0e0;
-            border-top-color: #b9956a;
-            border-radius: 50%;
-            animation: spin 0.6s linear infinite;
-            margin-right: 8px;
-            vertical-align: middle;
-        }
-
-        @keyframes spin {
-            to { transform: rotate(360deg); }
-        }
-
-        .alert {
-            padding: 12px;
-            border-radius: 8px;
+        .setup-note {
+            background: #e8f4f8;
+            border-left: 4px solid #0066cc;
+            padding: 15px;
+            border-radius: 4px;
             margin-bottom: 20px;
             font-size: 14px;
-            display: none;
+            color: #004085;
         }
 
-        .alert.success {
+        .status-badge {
+            display: inline-block;
             background: #d4edda;
             color: #155724;
-            border: 1px solid #c3e6cb;
-            display: block;
-        }
-
-        .alert.error {
-            background: #f8d7da;
-            color: #721c24;
-            border: 1px solid #f5c6cb;
-            display: block;
-        }
-
-        .info-text {
+            padding: 6px 12px;
+            border-radius: 20px;
             font-size: 12px;
-            color: #999;
-            margin-top: 6px;
+            font-weight: 600;
+            margin-top: 10px;
         }
 
         footer {
@@ -297,209 +201,47 @@
         <h1>🖥️ Memorial PDF Generator</h1>
         <p class="subtitle">Create elegant memorial PDFs with your poem and photos</p>
 
-        <div class="alert" id="alert"></div>
+        <div class="content">
+            <p>Transform your cherished memories into beautifully formatted memorial PDFs. Whether you're honoring a loved one with a poem or creating a lasting tribute, our Memorial PDF Generator makes it easy.</p>
+        </div>
 
-        <form id="pdfForm" enctype="multipart/form-data">
-            <!-- Title -->
-            <div class="form-group">
-                <label for="title">📝 Memorial Title (used as filename)</label>
-                <input type="text" id="title" name="title" placeholder="e.g., என்றும் எங்கள் நினைவில் வாழும் அப்பாவுக்கு!" value="Memorial">
-                <div class="info-text">This will be the PDF filename</div>
-            </div>
+        <div class="features">
+            <h3>✨ Features</h3>
+            <ul>
+                <li>Create elegant memorial PDFs</li>
+                <li>Customize with your own photos</li>
+                <li>Add poems and text tributes</li>
+                <li>Choose single or multi-column layouts</li>
+                <li>Professional formatting</li>
+                <li>Support for multiple languages</li>
+            </ul>
+        </div>
 
-            <!-- Photo Upload -->
-            <div class="form-group">
-                <label for="photo">📸 Upload Photo</label>
-                <div class="file-input-wrapper">
-                    <input type="file" id="photo" name="photo" accept="image/*">
-                    <label for="photo" class="file-label">
-                        <span id="photoLabel">📁 Click to upload or drag photo here</span>
-                        <span class="file-name" id="photoName"></span>
-                    </label>
-                </div>
-                <div class="info-text">JPG, PNG, GIF, WebP (optional - uses default if not provided)</div>
-            </div>
+        <div class="setup-note">
+            <strong>⚠️ Note:</strong> The app backend needs to be deployed to a service like Render.com. See the GitHub repository for deployment instructions.
+        </div>
 
-            <!-- Dates -->
-            <div class="form-group">
-                <label for="dates">📅 Dates (optional)</label>
-                <input type="text" id="dates" name="dates" placeholder="e.g., 18 - மே - 2026">
-            </div>
+        <div class="btn-group">
+            <a href="https://memorial-pdf-generator.onrender.com" class="btn btn-launch" target="_blank">🚀 Launch App</a>
+            <a href="https://github.com/agalya/Memorial-PDF-Generator" class="btn btn-github" target="_blank">📦 GitHub Repo</a>
+        </div>
 
-            <!-- Poem Text -->
-            <div class="form-group">
-                <label for="poem">✍️ Poem Text</label>
-                <textarea id="poem" name="poem" placeholder="Enter your poem here..." required></textarea>
-                <div class="info-text">Required - The main content of your memorial</div>
-            </div>
-
-            <!-- Author Name -->
-            <div class="form-group">
-                <label for="author">👤 Author Name(s)</label>
-                <textarea id="author" name="author" placeholder="Enter author names (one per line)"></textarea>
-                <div class="info-text">Leave empty for no author attribution</div>
-            </div>
-
-            <!-- Column Selection -->
-            <div class="form-group">
-                <label>📄 Layout</label>
-                <div class="radio-group">
-                    <div class="radio-option">
-                        <input type="radio" id="auto" name="columns" value="auto" checked>
-                        <label for="auto">Auto-detect (recommended)</label>
-                    </div>
-                    <div class="radio-option">
-                        <input type="radio" id="oneCol" name="columns" value="1">
-                        <label for="oneCol">One Column</label>
-                    </div>
-                    <div class="radio-option">
-                        <input type="radio" id="twoCol" name="columns" value="2">
-                        <label for="twoCol">Two Columns</label>
-                    </div>
-                </div>
-                <div class="info-text">Auto-detect uses 2 columns for longer poems, 1 column for shorter ones</div>
-            </div>
-
-            <!-- Buttons -->
-            <div class="btn-group">
-                <button type="submit" class="btn-generate" id="generateBtn">🎨 Generate PDF</button>
-                <button type="reset" class="btn-reset">🔄 Clear</button>
-            </div>
-
-            <div class="loading" id="loading">
-                <span class="spinner"></span>Generating PDF...
-            </div>
-        </form>
+        <div style="margin-top: 20px; padding-top: 20px; border-top: 1px solid #eee;">
+            <h3 style="color: #1a1a2e; margin-bottom: 15px; font-size: 16px;">📖 Quick Setup</h3>
+            <p style="color: #555; font-size: 14px; margin-bottom: 10px;"><strong>For local use:</strong></p>
+            <pre style="background: #f5f5f5; padding: 12px; border-radius: 4px; overflow-x: auto; font-size: 13px;"><code>git clone https://github.com/agalya/Memorial-PDF-Generator.git
+cd Memorial-PDF-Generator
+pip install -r requirements.txt
+python app.py</code></pre>
+            <p style="color: #666; font-size: 13px; margin-top: 15px;">Then open <code style="background: #f5f5f5; padding: 2px 6px; border-radius: 3px;">http://localhost:5000</code> in your browser.</p>
+        </div>
     </div>
-
-    <script>
-        // File input handling
-        const photoInput = document.getElementById('photo');
-        const photoLabel = document.getElementById('photoLabel');
-        const photoName = document.getElementById('photoName');
-
-        photoInput.addEventListener('change', function() {
-            if (this.files && this.files[0]) {
-                photoName.textContent = `Selected: ${this.files[0].name}`;
-                photoLabel.style.borderColor = '#b9956a';
-            }
-        });
-
-        // Drag and drop
-        const fileLabel = document.querySelector('.file-label');
-        ['dragenter', 'dragover', 'dragleave', 'drop'].forEach(eventName => {
-            fileLabel.addEventListener(eventName, preventDefaults, false);
-        });
-
-        function preventDefaults(e) {
-            e.preventDefault();
-            e.stopPropagation();
-        }
-
-        ['dragenter', 'dragover'].forEach(eventName => {
-            fileLabel.addEventListener(eventName, () => {
-                fileLabel.style.backgroundColor = '#f0ebe5';
-                fileLabel.style.borderColor = '#8b7355';
-            }, false);
-        });
-
-        ['dragleave', 'drop'].forEach(eventName => {
-            fileLabel.addEventListener(eventName, () => {
-                fileLabel.style.backgroundColor = '#f5f5f5';
-                fileLabel.style.borderColor = '#b9956a';
-            }, false);
-        });
-
-        fileLabel.addEventListener('drop', (e) => {
-            const dt = e.dataTransfer;
-            const files = dt.files;
-            photoInput.files = files;
-            photoInput.dispatchEvent(new Event('change', { bubbles: true }));
-        }, false);
-
-        // Form submission
-        document.getElementById('pdfForm').addEventListener('submit', async (e) => {
-            e.preventDefault();
-
-            const poem = document.getElementById('poem').value.trim();
-            if (!poem) {
-                showAlert('Poem text is required', 'error');
-                return;
-            }
-
-            const formData = new FormData(document.getElementById('pdfForm'));
-            
-            // Get column value
-            const columnsValue = document.querySelector('input[name="columns"]:checked').value;
-            if (columnsValue !== 'auto') {
-                formData.set('columns', columnsValue);
-            } else {
-                // Auto-detect: use 0 or send nothing to indicate auto
-                formData.set('columns', '0');
-            }
-
-            const generateBtn = document.getElementById('generateBtn');
-            const loading = document.getElementById('loading');
-
-            generateBtn.disabled = true;
-            loading.style.display = 'block';
-
-            try {
-                const response = await fetch('/generate-pdf', {
-                    method: 'POST',
-                    body: formData
-                });
-
-                if (!response.ok) {
-                    const errorData = await response.json();
-                    throw new Error(errorData.error || 'Failed to generate PDF');
-                }
-
-                // Get filename from Content-Disposition header
-                const contentDisposition = response.headers.get('content-disposition');
-                let filename = 'memorial.pdf';
-                if (contentDisposition) {
-                    const match = contentDisposition.match(/filename="?([^"]+)"?/);
-                    if (match) filename = match[1];
-                }
-
-                // Download PDF
-                const blob = await response.blob();
-                const url = window.URL.createObjectURL(blob);
-                const a = document.createElement('a');
-                a.href = url;
-                a.download = filename;
-                document.body.appendChild(a);
-                a.click();
-                window.URL.revokeObjectURL(url);
-                a.remove();
-
-                showAlert(`PDF generated successfully: ${filename}`, 'success');
-
-            } catch (error) {
-                showAlert(`Error: ${error.message}`, 'error');
-            } finally {
-                generateBtn.disabled = false;
-                loading.style.display = 'none';
-            }
-        });
-
-        function showAlert(message, type) {
-            const alert = document.getElementById('alert');
-            alert.textContent = message;
-            alert.className = `alert ${type}`;
-            setTimeout(() => {
-                alert.style.display = 'none';
-            }, 5000);
-        }
-    </script>
 
     <footer>
         <div>
             <strong>© 2026 Agalya</strong> | Memorial PDF Generator<br>
             Licensed under <a href="https://www.gnu.org/licenses/gpl-3.0.html" target="_blank">GPL v3</a> | 
-            <a href="https://github.com" target="_blank">View on GitHub</a> | 
-            <a href="https://www.gnu.org/licenses/gpl-3.0.html" target="_blank">License Terms</a>
+            <a href="https://github.com/agalya/Memorial-PDF-Generator" target="_blank">View on GitHub</a>
         </div>
     </footer>
 </body>
