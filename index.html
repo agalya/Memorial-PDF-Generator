@@ -1,0 +1,367 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Memorial PDF Generator</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #1a1a1a 0%, #2d2d2d 100%);
+            color: #e0e0e0;
+            line-height: 1.6;
+        }
+        
+        header {
+            background: linear-gradient(135deg, #1a1a1a 0%, #2d2d2d 100%);
+            border-bottom: 3px solid #d4af37;
+            padding: 2rem 0;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+        
+        nav {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .logo {
+            font-size: 1.5rem;
+            font-weight: bold;
+            color: #d4af37;
+        }
+        
+        nav a {
+            color: #e0e0e0;
+            text-decoration: none;
+            margin-left: 2rem;
+            transition: color 0.3s;
+        }
+        
+        nav a:hover {
+            color: #d4af37;
+        }
+        
+        .hero {
+            max-width: 1200px;
+            margin: 4rem auto;
+            padding: 2rem;
+            text-align: center;
+        }
+        
+        h1 {
+            font-size: 3rem;
+            color: #d4af37;
+            margin-bottom: 1rem;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
+        }
+        
+        .tagline {
+            font-size: 1.3rem;
+            color: #b0b0b0;
+            margin-bottom: 2rem;
+            font-style: italic;
+        }
+        
+        .cta-buttons {
+            display: flex;
+            gap: 1rem;
+            justify-content: center;
+            margin: 2rem 0;
+            flex-wrap: wrap;
+        }
+        
+        .btn {
+            padding: 1rem 2rem;
+            border: none;
+            border-radius: 5px;
+            font-size: 1rem;
+            cursor: pointer;
+            transition: all 0.3s;
+            text-decoration: none;
+            display: inline-block;
+        }
+        
+        .btn-primary {
+            background-color: #d4af37;
+            color: #1a1a1a;
+            font-weight: bold;
+        }
+        
+        .btn-primary:hover {
+            background-color: #f0c958;
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(212, 175, 55, 0.3);
+        }
+        
+        .btn-secondary {
+            background-color: #404040;
+            color: #d4af37;
+            border: 2px solid #d4af37;
+        }
+        
+        .btn-secondary:hover {
+            background-color: #d4af37;
+            color: #1a1a1a;
+            transform: translateY(-2px);
+        }
+        
+        .features {
+            max-width: 1200px;
+            margin: 3rem auto;
+            padding: 0 2rem;
+        }
+        
+        .features h2 {
+            font-size: 2rem;
+            color: #d4af37;
+            text-align: center;
+            margin-bottom: 2rem;
+        }
+        
+        .feature-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            margin-bottom: 3rem;
+        }
+        
+        .feature-card {
+            background: linear-gradient(135deg, #2d2d2d 0%, #404040 100%);
+            padding: 1.5rem;
+            border-radius: 8px;
+            border-left: 4px solid #d4af37;
+            transition: all 0.3s;
+        }
+        
+        .feature-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 5px 20px rgba(212, 175, 55, 0.2);
+        }
+        
+        .feature-card h3 {
+            color: #d4af37;
+            margin-bottom: 0.5rem;
+        }
+        
+        .feature-card p {
+            color: #b0b0b0;
+            font-size: 0.95rem;
+        }
+        
+        .screenshot-section {
+            max-width: 1200px;
+            margin: 3rem auto;
+            padding: 0 2rem;
+            text-align: center;
+        }
+        
+        .screenshot-section h2 {
+            font-size: 2rem;
+            color: #d4af37;
+            margin-bottom: 2rem;
+        }
+        
+        .screenshot {
+            background: linear-gradient(135deg, #2d2d2d 0%, #404040 100%);
+            padding: 1rem;
+            border-radius: 8px;
+            border: 2px solid #d4af37;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        
+        .how-it-works {
+            max-width: 1200px;
+            margin: 3rem auto;
+            padding: 0 2rem;
+        }
+        
+        .how-it-works h2 {
+            font-size: 2rem;
+            color: #d4af37;
+            text-align: center;
+            margin-bottom: 2rem;
+        }
+        
+        .steps {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 2rem;
+        }
+        
+        .step {
+            background: linear-gradient(135deg, #2d2d2d 0%, #404040 100%);
+            padding: 2rem;
+            border-radius: 8px;
+            text-align: center;
+            border-top: 3px solid #d4af37;
+        }
+        
+        .step-number {
+            font-size: 2.5rem;
+            color: #d4af37;
+            font-weight: bold;
+            margin-bottom: 0.5rem;
+        }
+        
+        .step p {
+            color: #b0b0b0;
+        }
+        
+        footer {
+            background: #1a1a1a;
+            border-top: 3px solid #d4af37;
+            text-align: center;
+            padding: 2rem;
+            margin-top: 3rem;
+            color: #b0b0b0;
+        }
+        
+        footer a {
+            color: #d4af37;
+            text-decoration: none;
+        }
+        
+        footer a:hover {
+            text-decoration: underline;
+        }
+        
+        .status-badge {
+            display: inline-block;
+            background-color: #28a745;
+            color: white;
+            padding: 0.5rem 1rem;
+            border-radius: 20px;
+            font-size: 0.9rem;
+            margin: 1rem 0;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <nav>
+            <div class="logo">🕊️ Memorial PDF Generator</div>
+            <div>
+                <a href="#features">Features</a>
+                <a href="#how-it-works">How It Works</a>
+                <a href="https://github.com/agalya/Memorial-PDF-Generator" target="_blank">GitHub</a>
+            </div>
+        </nav>
+    </header>
+    
+    <section class="hero">
+        <h1>Memorial PDF Generator</h1>
+        <p class="tagline">Create elegant memorial PDFs with poems and photos</p>
+        
+        <div class="status-badge">✅ Live on Render</div>
+        
+        <p style="color: #b0b0b0; margin: 1.5rem 0; max-width: 600px; margin-left: auto; margin-right: auto;">
+            Honor your loved ones with beautifully formatted memorial documents. 
+            A simple, intuitive web application that transforms poems and photos into elegant PDFs.
+        </p>
+        
+        <div class="cta-buttons">
+            <a href="https://memorial-pdf-generator.onrender.com" class="btn btn-primary" target="_blank">
+                Open Application →
+            </a>
+            <a href="https://github.com/agalya/Memorial-PDF-Generator" class="btn btn-secondary" target="_blank">
+                View on GitHub
+            </a>
+        </div>
+    </section>
+    
+    <section class="features" id="features">
+        <h2>✨ Features</h2>
+        <div class="feature-grid">
+            <div class="feature-card">
+                <h3>📝 Customizable Titles</h3>
+                <p>Add meaningful titles that reflect the memory you're honoring.</p>
+            </div>
+            <div class="feature-card">
+                <h3>📸 Photo Support</h3>
+                <p>Upload and attach beautiful photos (JPG, PNG, GIF, WebP).</p>
+            </div>
+            <div class="feature-card">
+                <h3>✍️ Poem Text</h3>
+                <p>Include meaningful poems, tributes, or personal messages.</p>
+            </div>
+            <div class="feature-card">
+                <h3>👤 Author Attribution</h3>
+                <p>Add author names or credits to your memorial.</p>
+            </div>
+            <div class="feature-card">
+                <h3>📄 Flexible Layouts</h3>
+                <p>Choose auto-detect, single-column, or two-column layouts.</p>
+            </div>
+            <div class="feature-card">
+                <h3>🎨 Elegant Design</h3>
+                <p>Professional dark theme with sophisticated gold accents.</p>
+            </div>
+        </div>
+    </section>
+    
+    <section class="how-it-works" id="how-it-works">
+        <h2>🚀 How It Works</h2>
+        <div class="steps">
+            <div class="step">
+                <div class="step-number">1</div>
+                <p><strong>Fill the Form</strong><br>Enter your memorial details and upload a photo</p>
+            </div>
+            <div class="step">
+                <div class="step-number">2</div>
+                <p><strong>Customize</strong><br>Choose layout and formatting options</p>
+            </div>
+            <div class="step">
+                <div class="step-number">3</div>
+                <p><strong>Generate</strong><br>Click Generate to create your PDF</p>
+            </div>
+            <div class="step">
+                <div class="step-number">4</div>
+                <p><strong>Download</strong><br>Save and share your memorial</p>
+            </div>
+        </div>
+    </section>
+    
+    <section class="screenshot-section">
+        <h2>📊 Technology Stack</h2>
+        <div class="feature-grid" style="margin-top: 2rem;">
+            <div class="feature-card">
+                <h3>Flask</h3>
+                <p>Web framework for Python</p>
+            </div>
+            <div class="feature-card">
+                <h3>fpdf2</h3>
+                <p>PDF generation library</p>
+            </div>
+            <div class="feature-card">
+                <h3>Pillow</h3>
+                <p>Image processing library</p>
+            </div>
+            <div class="feature-card">
+                <h3>Render.com</h3>
+                <p>Cloud hosting platform</p>
+            </div>
+        </div>
+    </section>
+    
+    <footer>
+        <p>© 2026 <a href="https://github.com/agalya" target="_blank">Agalya</a> | Licensed under GPLv3</p>
+        <p style="margin-top: 1rem; font-size: 0.9rem;">
+            <a href="https://github.com/agalya/Memorial-PDF-Generator" target="_blank">GitHub Repository</a> | 
+            <a href="https://memorial-pdf-generator.onrender.com" target="_blank">Live Application</a>
+        </p>
+    </footer>
+</body>
+</html>
